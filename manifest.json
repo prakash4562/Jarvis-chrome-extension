@@ -1,0 +1,30 @@
+{
+    "manifest_version": 3,
+    "name": "Hello world",
+    "description": "Chrome extension displaying hello world",
+    "version": "1.0.0",
+
+    "background": {
+        "service_worker": "background.js"
+    },
+    
+    "content_scripts": [
+        {
+            "matches": ["https://zila-staging.ccdms.in/*"],
+            "js": ["content.js"]
+        }
+    ],
+
+    "permissions": [
+        "activeTab",
+        "storage",
+        "webRequest"
+    ],
+    "host_permissions": ["<all_urls>"],
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "images/logo.png"
+        }
+    }
+}
